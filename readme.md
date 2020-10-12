@@ -2,6 +2,30 @@
 
 This is a simple package designed to enable multilanguage selection for route groups and additionally for models.
 
+To install:
+
+Add the "repositories" key to your composer.json file.
+```json
+{
+    ...
+    "license": "MIT",
+    "repositories":[
+        {
+            "type": "vcs",
+            "url": "https://github.com/m-nic/LaraLoc.git"
+        }
+    ],
+    "require": {
+      ...
+    }
+```
+Next run the following:
+
+```shell script
+composer require m-nic/lara-loc
+```
+
+
 1. Register the service provider before the RouteServiceProvider::class in `config/app.php` 
 ```php
     [
@@ -131,8 +155,8 @@ php artisan vendor:publish --tag="laraloc.views"
 ```
 
 See blade files:
-resources/views/vendor/mnic/locale-selector.blade.php
-resources/views/vendor/mnic/model-locale-selector.blade.php
+* resources/views/vendor/mnic/locale-selector.blade.php
+* resources/views/vendor/mnic/model-locale-selector.blade.php
 
 
 
