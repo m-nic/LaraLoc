@@ -1,0 +1,16 @@
+{
+    "name": "m-nic/lara-loc",
+    "license": "MIT",
+    "minimum-stability": "dev",
+    "require": {
+        "illuminate/support": "~5"
+    },
+    "autoload": {
+        "files": [
+            "src/Helpers/helpers.php"
+        ],
+        "psr-4": {
+            "mNic\\LaraLoc\\": "src/"
+        }
+    }
+}
