@@ -14,7 +14,7 @@ trait Translatable
     private $originalData = [];
     private $defferedTranslationsCreation = [];
 
-    abstract function getTranslatableFieldNames();
+    abstract public function getTranslatableFieldNames();
 
     public static function bootTranslatable()
     {
@@ -40,7 +40,9 @@ trait Translatable
         $this->currentLocale = laraloc()->getModelLocale();
         $this->shouldTranslateModel = $this->currentLocale !== $defaultLocale;
 
+        /** @var Model\ $this */
         $this->with[] = 'modelTranslations';
+        $this->addHidden(['modelTranslations']);
 
         $this->storeOriginalModelData();
         $this->createTranslationMap();
@@ -129,7 +131,7 @@ trait Translatable
     }
 
 
-    private function createTranslationMap(): void
+    private function createTranslationMap()
     {
         /** @var \Illuminate\Database\Eloquent\Model | Translatable $this */
         $this->translatedMap = $this->modelTranslations

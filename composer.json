@@ -3,7 +3,7 @@
     "license": "MIT",
     "minimum-stability": "dev",
     "require": {
-        "illuminate/support": "~5"
+        "illuminate/support": "~5.8"
     },
     "autoload": {
         "files": [
